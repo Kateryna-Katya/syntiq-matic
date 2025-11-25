@@ -1,56 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/test/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <script type="module" crossorigin src="/test/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/test/assets/styles-X9THPhCB.css">
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntiq-Matic | Консалтинг-блог | Инновационная технология</title>
+    <meta name="description" content="Syntiq-Matic — ваш проверенный партнер в мире стратегического консалтинга. Технология нового поколения для роста вашего бизнеса.">
+
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="module" crossorigin src="/syntiq-matic/index.js"></script>
+    <link rel="stylesheet" crossorigin href="/syntiq-matic/assets/styles-Er6KzF-8.css">
   </head>
   <body>
     <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="{=$icon-path}"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
-      </ul>
-    </nav>
+  <div class="header__container container">
+      <a href="./#hero" class="header__logo logo">Syntiq-Matic</a>
+
+      <nav class="header__nav nav">
+          <ul class="nav__list">
+              <li class="nav__item"><a href="./#hero" class="nav__link">Главная</a></li>
+              <li class="nav__item"><a href="./#strategy" class="nav__link">Стратегия</a></li>
+              <li class="nav__item"><a href="./#analytics" class="nav__link">Аналитика</a></li>
+              <li class="nav__item"><a href="./#cases" class="nav__link">Кейсы</a></li>
+              <li class="nav__item"><a href="./#trust" class="nav__link">Партнерство</a></li>
+              <li class="nav__item"><a href="./#contact" class="nav__link nav__link--cta button--small">Связаться</a></li>
+          </ul>
+      </nav>
+      <button class="header__burger" id="menuToggle" aria-label="Открыть меню">
+          <i data-lucide="menu"></i>
+      </button>
   </div>
 </header>
 
-
     <main>
       <!-- Loads the specified .html file -->
-      
+      <section class="hero" id="hero">
+  <div class="hero__container container">
+
+      <div class="hero__content">
+          <p class="hero__subtitle">Syntiq-Matic: Блог Стратегического Консалтинга</p>
+          <h1 class="hero__title">
+            Рост бизнеса с технологией нового поколения
+          </h1>
+          <p class="hero__text">
+            Мы предлагаем инновационные технологии и экспертные знания, чтобы вы раскрывали новые возможности и превращали мечты в реальность. Ваш быстрый и лёгкий путь к масштабированию успеха.
+          </p>
+          <div class="hero__actions">
+              <a href="#contact" class="hero__cta button button--primary">
+                  Бесплатная консультация по всем вопросам
+              </a>
+              <a href="#strategy" class="hero__details button button--secondary">
+                  Узнать детали
+              </a>
+          </div>
+      </div>
+
+      <div class="hero__visual" id="heroVisual">
+          <canvas id="flowCanvas" class="hero__canvas"></canvas>
+          <i data-lucide="monitor-dot" class="hero__icon-large"></i>
+      </div>
+  </div>
+</section>
+
+<section class="strategy" id="strategy">
+  <div class="strategy__container container">
+
+      <div class="strategy__header">
+          <h2 class="strategy__title">Наша Стратегия: Простота и Результат</h2>
+          <p class="strategy__description">
+              Мы помогаем вам **сформировать полное понимание** рынка и процессов без лишних сложностей. Начните получать пассивный доход, используя нашу методологию.
+          </p>
+      </div>
+
+      <div class="strategy__grid">
+
+          <div class="strategy__card card">
+              <i data-lucide="zap" class="card__icon"></i>
+              <h3 class="card__title">Быстрый и легкий старт</h3>
+              <p class="card__text">
+                  Наши инструкции позволяют начать работу практически немедленно. **Подключение занимает 2 минуты**, и вы уже в деле.
+              </p>
+          </div>
+
+          <div class="strategy__card card">
+              <i data-lucide="graduation-cap" class="card__icon"></i>
+              <h3 class="card__title">Экспертиза без опыта</h3>
+              <p class="card__text">
+                  Благодаря нашим материалам, вам **легко разобраться без опыта**. Мы предоставляем все необходимые инструменты для успеха.
+              </p>
+          </div>
+
+          <div class="strategy__card card">
+              <i data-lucide="trending-up" class="card__icon"></i>
+              <h3 class="card__title">Устойчивый Пассивный Доход</h3>
+              <p class="card__text">
+                  Используйте нашу **технология для пассивного дохода** и постройте свою собственную **программа пассивного дохода** с минимальными усилиями.
+              </p>
+          </div>
+
+          <div class="strategy__card card">
+              <i data-lucide="search" class="card__icon"></i>
+              <h3 class="card__title">Детальный Анализ</h3>
+              <p class="card__text">
+                  Мы позволяем вам **погрузиться в детали** и понять каждую часть процесса, чтобы избежать рисков и максимизировать прибыль.
+              </p>
+          </div>
+
+      </div>
+
+      <div class="strategy__footer">
+          <a href="#contact" class="strategy__cta button button--primary button--large">
+              Пройти опрос и получить консультацию
+          </a>
+      </div>
+
+  </div>
+</section>
     </main>
 
     <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
-      </a>
-    </p>
+  <div class="footer__container container">
+
+      <div class="footer__col footer__col--brand">
+          <a href="./#hero" class="footer__logo logo">Syntiq-Matic</a>
+          <p class="footer__text">
+              Ваш проверенный партнер в стратегическом консалтинге. Воплотите мечты в реальность с нашей помощью.
+          </p>
+          <p class="footer__legal-note">
+              *Предложение активно только в странах ЕС
+          </p>
+      </div>
+
+      <div class="footer__col footer__col--nav">
+          <h3 class="footer__heading">Навигация</h3>
+          <ul class="footer__list">
+              <li><a href="./#hero" class="footer__link">Главная</a></li>
+              <li><a href="./#strategy" class="footer__link">Стратегия</a></li>
+              <li><a href="./#analytics" class="footer__link">Аналитика</a></li>
+              <li><a href="./#cases" class="footer__link">Кейсы</a></li>
+              <li><a href="./#trust" class="footer__link">Партнерство</a></li>
+              <li><a href="./#contact" class="footer__link">Связаться</a></li>
+          </ul>
+      </div>
+
+      <div class="footer__col footer__col--legal">
+          <h3 class="footer__heading">Документы</h3>
+          <ul class="footer__list">
+              <li><a href="./privacy.html" class="footer__link">Политика конфиденциальности</a></li>
+              <li><a href="./cookies.html" class="footer__link">Политика Cookies</a></li>
+              <li><a href="./terms.html" class="footer__link">Условия использования</a></li>
+              <li><a href="./return.html" class="footer__link">Политика возврата</a></li>
+              <li><a href="./disclaimer.html" class="footer__link">Отказ от ответственности</a></li>
+              <li><a href="./personal-data-policy.html" class="footer__link">Политика обработки данных</a></li>
+          </ul>
+      </div>
+
+      <div class="footer__col footer__col--contacts">
+          <h3 class="footer__heading">Контакты</h3>
+          <ul class="footer__list">
+              <li class="footer__contact-item">
+                  <i data-lucide="phone"></i>
+                  <a href="tel:+493057892145" class="footer__link">+49 30 5789 2145</a>
+              </li>
+              <li class="footer__contact-item">
+                  <i data-lucide="mail"></i>
+                  <a href="mailto:consult@syntiq-matic.today" class="footer__link">consult@syntiq-matic.today</a>
+              </li>
+              <li class="footer__contact-item">
+                  <i data-lucide="map-pin"></i>
+                  <address class="footer__address">Kurfürstendamm 237, 10719 Berlin, Deutschland</address>
+              </li>
+          </ul>
+      </div>
+  </div>
+
+  <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2025 Syntiq-Matic. Все права защищены. Платформа года.</p>
   </div>
 </footer>
 
+    <div class="cookie-popup is-hidden" id="cookiePopup">
+      <p class="cookie-popup__text">Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="cookies.html" class="cookie-popup__link">Cookie политике</a>.</p>
+      <button class="cookie-popup__button button--primary" id="acceptCookies">Принять</button>
+  </div>
 
+    <script>
+      // Инициализация Lucide Icons
+      lucide.createIcons();
+  </script>
   </body>
 </html>
