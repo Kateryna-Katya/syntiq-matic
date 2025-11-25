@@ -1120,16 +1120,7 @@ h1, h2, h3, h4 {
     margin: 0 auto;
 }
 
-/* Пагинация (точки) */
-.reviews__pagination.swiper-pagination-bullets .swiper-pagination-bullet {
-    background-color: rgba(255, 255, 255, 0.4);
-    opacity: 1;
-    transition: background-color 0.3s;
-}
 
-.reviews__pagination.swiper-pagination-bullets .swiper-pagination-bullet-active {
-    background-color: var(--color-primary);
-}
 .reviews__slider {
     padding-bottom: 3rem;
     /* Ограничение ширины и центрирование */

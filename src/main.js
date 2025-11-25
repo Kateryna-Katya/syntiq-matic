@@ -185,11 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 disableOnInteraction: false, 
             },
 
-            // Пагинация (точки)
-            pagination: {
-                el: '.reviews__pagination',
-                clickable: true,
-            },
+   
             
             // Адаптивные брейкпоинты
             breakpoints: {
