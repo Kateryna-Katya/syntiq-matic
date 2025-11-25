@@ -164,4 +164,146 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // ==========================================================================
     // Конец JS Анимации
+// ==========================================================================
+    // ==========================================================================
+    // 4. Инициализация Swiper (Отзывы) - ОБНОВЛЕНО: Автовоспроизведение, ЦЕНТРИРОВАНИЕ
+    // ==========================================================================
+    
+    if (typeof Swiper !== 'undefined' && document.querySelector('.reviews__slider')) {
+        new Swiper('.reviews__slider', {
+            // Опции для слайдера
+            slidesPerView: 1, 
+            spaceBetween: 30,
+            loop: true,
+            
+            // НОВОЕ: Центрирование активного слайда
+            centeredSlides: true, 
+            
+            // Активируем автовоспроизведение
+            autoplay: {
+                delay: 4500, // Смена слайда каждые 4.5 секунды
+                disableOnInteraction: false, 
+            },
+
+            // Пагинация (точки)
+            pagination: {
+                el: '.reviews__pagination',
+                clickable: true,
+            },
+            
+            // Адаптивные брейкпоинты
+            breakpoints: {
+                768: {
+                    slidesPerView: 2, 
+                    spaceBetween: 30,
+                    // При нескольких слайдах центрирование часто выглядит плохо,
+                    // поэтому отключаем его на десктопе, либо делаем центрирование 
+                    // группы слайдов, что сложнее.
+                    // Оставляем centeredSlides: false по умолчанию для > 1 слайда
+                },
+                1200: {
+                    slidesPerView: 3, 
+                    spaceBetween: 40,
+                }
+            }
+        });
+}
+    // ==========================================================================
+    // 5. JS Логика Формы Контактов и CAPTCHA (Этап 4)
+    // ==========================================================================
+    const contactForm = document.getElementById('contactForm');
+    const captchaDisplay = document.getElementById('captchaDisplay');
+    const captchaInput = document.getElementById('captchaInput');
+    const captchaMessage = document.getElementById('captchaMessage');
+    const submissionMessage = document.getElementById('submissionMessage');
+    const policyAccept = document.getElementById('policyAccept');
+    
+    let correctAnswer = 0;
+
+    /**
+     * Генерирует простой математический пример (CAPTCHA).
+     */
+    function generateCaptcha() {
+        // Усложняем примеры (+ или -)
+        const operator = Math.random() < 0.5 ? '+' : '-';
+        let num1 = Math.floor(Math.random() * 15) + 5;
+        let num2 = Math.floor(Math.random() * 10) + 1;
+        
+        // Гарантируем положительный результат для минуса
+        if (operator === '-' && num1 < num2) {
+            [num1, num2] = [num2, num1];
+        }
+
+        correctAnswer = operator === '+' ? num1 + num2 : num1 - num2;
+        captchaDisplay.textContent = `${num1} ${operator} ${num2} = ?`;
+        captchaMessage.textContent = ''; 
+        captchaInput.value = ''; 
+    }
+
+    /**
+     * Валидирует ответ CAPTCHA.
+     * @returns {boolean} True, если ответ верный.
+     */
+    function validateCaptcha() {
+        if (!captchaInput.value.trim()) {
+            captchaMessage.textContent = 'Пожалуйста, решите пример.';
+            captchaMessage.style.color = '#FF4545'; 
+            return false;
+        }
+
+        const userAnswer = parseInt(captchaInput.value.trim());
+        if (userAnswer === correctAnswer) {
+            captchaMessage.textContent = 'Капча успешно пройдена!';
+            captchaMessage.style.color = '#28A745'; 
+            return true;
+        } else {
+            captchaMessage.textContent = 'Неверный ответ. Попробуйте еще раз.';
+            captchaMessage.style.color = '#FF4545'; 
+            generateCaptcha(); 
+            return false;
+        }
+    }
+
+    // Инициализация CAPTCHA при загрузке страницы
+    generateCaptcha();
+
+    // Обработчик отправки формы
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        submissionMessage.style.display = 'none'; 
+
+        const isCaptchaValid = validateCaptcha();
+        const isPolicyAccepted = policyAccept.checked;
+
+        if (isCaptchaValid && isPolicyAccepted) {
+            
+            // Имитация успешной отправки данных
+            console.log('Form Submitted and Validated:', {
+                name: document.getElementById('contactName').value,
+                email: document.getElementById('contactEmail').value,
+                phone: document.getElementById('contactPhone').value,
+                policy: isPolicyAccepted
+            });
+
+            // Показываем сообщение об успехе ТОЛЬКО после успешной валидации
+            submissionMessage.style.display = 'block';
+            
+            // Сброс формы и генерация новой капчи
+            contactForm.reset();
+            generateCaptcha();
+            
+            // Автоматически скрываем сообщение через 5 секунд
+            setTimeout(() => {
+                submissionMessage.style.display = 'none';
+            }, 5000);
+
+        } else if (!isPolicyAccepted) {
+            // Если капча пройдена, но чекбокс нет
+            alert('Пожалуйста, примите условия использования и политику конфиденциальности.');
+            policyAccept.focus();
+        } 
+    });
+
+    // ==========================================================================
+    // Конец JS Логики Формы Контактов
     // ==========================================================================

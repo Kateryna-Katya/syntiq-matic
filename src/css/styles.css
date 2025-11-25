@@ -243,7 +243,7 @@ h1, h2, h3, h4 {
 
     .nav__link {
         padding: 0.5rem 0.75rem;
-        color: var(--color-text);
+        color: var(--color-white);
     }
 
     .nav__link:hover {
@@ -259,6 +259,7 @@ h1, h2, h3, h4 {
     .nav__link--cta:hover {
         background-color: var(--color-primary);
         transform: translateY(-1px);
+        color: var(--color-white);
     }
 }
 
@@ -716,4 +717,595 @@ h1, h2, h3, h4 {
         grid-template-columns: repeat(4, 1fr);
         gap: 1.5rem;
     }
+}
+
+
+/* ==========================================================================
+   9. Стили для Секции Аналитика (Этап 3.3)
+   ========================================================================== */
+.analytics {
+    padding: var(--space-xl) 0;
+    background-color: var(--color-background);
+}
+
+.analytics__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+.analytics__image-box {
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    padding: 1rem;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--border-radius);
+    background-color: var(--color-neutral);
+    /* Темный фон для контраста с изображением */
+}
+
+.analytics__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Легкое свечение вокруг изображения */
+    box-shadow: 0 0 15px rgba(0, 163, 255, 0.5);
+    border-radius: 4px;
+}
+
+.analytics__image-caption {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.analytics__content {
+    max-width: 500px;
+    text-align: center;
+}
+
+.analytics__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.analytics__description {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Стили для метрик */
+.analytics__metrics {
+    display: flex;
+    justify-content: space-around;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    padding: 1rem 0;
+    border-top: 1px dashed var(--color-neutral);
+    border-bottom: 1px dashed var(--color-neutral);
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.metric-item__value {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: var(--color-secondary);
+    /* Зеленый - цвет роста */
+    line-height: 1.1;
+}
+
+.metric-item__label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+/* Десктопная версия (>= 992px) */
+@media (min-width: 992px) {
+    .analytics__container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .analytics__content {
+        text-align: left;
+    }
+
+    .analytics__image-box {
+        order: 2;
+        /* Изображение справа */
+    }
+
+    .analytics__metrics {
+        justify-content: flex-start;
+    }
+
+    .metric-item {
+        align-items: flex-start;
+    }
+}
+
+/* ==========================================================================
+   10. Стили для Секции Кейсы (Этап 3.4)
+   ========================================================================== */
+.cases {
+    padding: var(--space-xl) 0;
+    text-align: center;
+    background-color: var(--color-background);
+    /* Основной темный фон */
+}
+
+.cases__heading {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 0.75rem;
+}
+
+.cases__subtext {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 800px;
+    margin: 0 auto 3.5rem;
+}
+
+.cases__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Одна колонка на мобильных */
+    gap: var(--space-md);
+}
+
+/* Стили для карточки Кейса */
+.case-study-card {
+    background-color: var(--color-neutral);
+    /* Темный фон карточки */
+    padding: var(--space-md);
+    border-radius: var(--border-radius);
+    text-align: left;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    border: 1px solid var(--color-neutral);
+    position: relative;
+    overflow: hidden;
+}
+
+.case-study-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    /* Синий бордер при наведении */
+    box-shadow: 0 8px 25px rgba(0, 163, 255, 0.2);
+}
+
+.case-study-card__icon {
+    width: 32px;
+    height: 32px;
+    color: var(--color-primary);
+    /* Синий цвет иконки */
+    margin-bottom: 1rem;
+}
+
+.case-study-card__title {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+}
+
+.case-study-card__summary {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Ссылка внутри карточки */
+.case-study-card__link {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    color: var(--color-secondary);
+    /* Зеленый акцент на ссылке */
+}
+
+.case-study-card__link:hover {
+    color: var(--color-primary);
+}
+
+.case-study-card__arrow {
+    width: 18px;
+    height: 18px;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease-out;
+}
+
+.case-study-card__link:hover .case-study-card__arrow {
+    transform: translateX(5px);
+}
+
+/* Адаптивность для сетки */
+@media (min-width: 768px) {
+    .cases__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-lg);
+    }
+}
+
+/* ==========================================================================
+   11. Стили для Секции Партнерство (Trust) (Этап 3.5 - ОБНОВЛЕНО: С фоновым изображением)
+   ========================================================================== */
+.trust {
+    padding: var(--space-xl) 0;
+    text-align: center;
+    background-color: var(--color-background);
+    /* Основной темный фон, если изображение не загрузится */
+    position: relative;
+    overflow: hidden;
+    min-height: 50vh;
+    /* Минимальная высота для фонового изображения */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Стилизация для версии с фоновым изображением */
+.trust--hero-like {
+    background-image: url('/img/two.jpg');
+    /* Используем плейсхолдер */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    /* Эффект Parallax */
+    position: relative;
+}
+
+.trust--hero-like::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Наложение полупрозрачного темного слоя для лучшей читаемости текста */
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.trust--hero-like .trust__container {
+    position: relative;
+    z-index: 2;
+    /* Контент поверх оверлея */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: inherit;
+    /* Контейнер наследует минимальную высоту */
+}
+
+.trust__heading {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    color: var(--color-white);
+    /* Белый текст для контраста с темным фоном */
+    max-width: 900px;
+    line-height: 1.2;
+}
+
+.trust__subtext {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+}
+
+.trust__cta-button {
+    /* Стили кнопки остаются без изменений, но она больше */
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+}
+
+
+/* Адаптивность для десктопа */
+@media (min-width: 768px) {
+    .trust--hero-like {
+        min-height: 70vh;
+        /* Увеличим высоту на десктопе */
+    }
+
+    .trust__heading {
+        font-size: 4.5rem;
+    }
+}
+
+/* ==========================================================================
+   12. Стили для Секции Отзывы (Этап 3.6 - ОБНОВЛЕНО: ограничение ширины)
+   ========================================================================== */
+.reviews {
+    padding: var(--space-l) 0;
+    text-align: center;
+    background-color: var(--color-background);
+    /* Основной темный фон */
+}
+
+.reviews__heading {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+}
+
+.reviews__subtext {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+/* Стили для карточки отзыва */
+.review-card {
+    background-color: var(--color-neutral);
+    /* Темный фон карточки */
+    padding: var(--space-md);
+    border-radius: var(--border-radius);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    border: 1px solid rgba(0, 163, 255, 0.1);
+    /* Легкий синий бордер */
+    transition: box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 163, 255, 0.2);
+    /* Синее свечение при наведении */
+}
+
+.review-card__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.review-card__icon {
+    width: 24px;
+    height: 24px;
+    color: var(--color-secondary);
+    fill: var(--color-secondary);
+    margin-right: 0.75rem;
+}
+
+.review-card__author {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.review-card__quote {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+    border-left: none;
+    font-style: italic;
+}
+
+.review-card__source {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+}
+
+/* Стилизация Swiper элементов */
+.reviews__slider {
+    padding-bottom: 3rem;
+    /* НОВОЕ: Ограничение ширины и центрирование */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Пагинация (точки) */
+.reviews__pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.4);
+    opacity: 1;
+    transition: background-color 0.3s;
+}
+
+.reviews__pagination.swiper-pagination-bullets .swiper-pagination-bullet-active {
+    background-color: var(--color-primary);
+}
+.reviews__slider {
+    padding-bottom: 3rem;
+    /* Ограничение ширины и центрирование */
+    max-width: 1100px;
+    margin: 0 auto;
+    /* Убедимся, что Swiper Container не вылезает за пределы */
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   13. Стили для Секции Контактов (Contact) (Этап 4)
+   ========================================================================== */
+.contact {
+    padding: var(--space-xl) 0;
+    text-align: center;
+    background-color: var(--color-background);
+}
+
+.contact__heading {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+}
+
+.contact__subtext {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.contact-form {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: var(--space-md);
+    background-color: var(--color-neutral);
+    /* Темнее, чем фон сайта */
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 163, 255, 0.1);
+}
+
+.form-group {
+    margin-bottom: var(--space-md);
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-neutral);
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    /* Фон поля ввода */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 163, 255, 0.3);
+    /* Синее свечение при фокусе */
+}
+
+/* CAPTCHA Styles */
+.captcha-group {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-sm);
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.captcha-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--color-background);
+    padding: 0.75rem;
+    border: 1px solid var(--color-neutral);
+    border-radius: 4px;
+}
+
+.captcha-box__display {
+    font-size: 1.2rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-secondary);
+    /* Зеленый цвет для примера */
+    padding: 0 0.5rem;
+    min-width: 100px;
+    text-align: center;
+}
+
+.captcha-box input {
+    flex-grow: 1;
+    color: var(--color-text);
+    background-color: var(--color-neutral);
+    border: 1px solid var(--color-neutral);
+}
+
+.captcha-message {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    height: 1.2rem;
+}
+
+/* Стили для Чекбокса Конфиденциальности */
+.form-group--checkbox {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.form-group--checkbox input[type="checkbox"] {
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-right: 0.75rem;
+    border: 1px solid var(--color-text);
+    background-color: var(--color-background);
+    appearance: none;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.form-group--checkbox input[type="checkbox"]:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.form-group--checkbox input[type="checkbox"]:checked::after {
+    content: '\2713';
+    font-size: 14px;
+    color: var(--color-white);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+}
+
+.checkbox-label {
+    font-size: 0.95rem;
+    font-weight: 400;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.checkbox-label a {
+    text-decoration: underline;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* Submission Message */
+.submission-message {
+    margin-top: var(--space-md);
+    padding: var(--space-sm);
+    background-color: rgba(40, 167, 69, 0.3);
+    /* Darker green for success */
+    color: var(--color-white);
+    border: 1px solid var(--color-secondary);
+    border-radius: 4px;
+    font-weight: 600;
 }
