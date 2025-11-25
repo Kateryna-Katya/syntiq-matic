@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page 2</title>
-    <link rel="stylesheet" crossorigin href="/syntiq-matic/assets/styles-BVI1pv99.css">
-  </head>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Политика Cookies | Syntiq-Matic</title>
+  <meta name="description"
+    content="Syntiq-Matic — ваш проверенный партнер в мире стратегического консалтинга. Технология нового поколения для роста вашего бизнеса.">
+
+  <link rel="icon" type="image/svg+xml" href="./favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" crossorigin src="/syntiq-matic/assets/main-ThlKzFsl.js"></script>
+  <link rel="stylesheet" crossorigin href="/syntiq-matic/assets/main-4NACQoG8.css">
+</head>
   <body>
     <header class="header">
   <div class="header__container container">
@@ -28,13 +43,42 @@
   </div>
 </header>
 
-    <main>
-      <div class="container">
-        <h1 class="main-title">
-          <span class="main-title-gradient">Welcome</span> to page 2
-        </h1>
-      </div>
-    </main>
+<main class="main--policy">
+  <div class="policy__content">
+    <h1>Политика Cookies</h1>
+    <p>Дата вступления в силу: 25 ноября 2025 г.</p>
+
+    <h2>1. Что такое файлы Cookie?</h2>
+    <p>
+      Файлы cookie — это небольшие текстовые файлы, которые сохраняются на вашем устройстве при посещении нашего
+      веб-сайта syntiq-matic.today. Они позволяют Сервису распознавать ваше устройство и сохранять информацию о
+      ваших предпочтениях.
+    </p>
+
+    <h2>2. Как Syntiq-Matic использует Cookies</h2>
+    <p>
+      Мы используем файлы cookie для следующих целей:
+    </p>
+    <ul>
+      <li>Функциональные: Обеспечение работы основных функций сайта (Легко разобраться без опыта).</li>
+      <li>Аналитические: Сбор данных о том, как вы взаимодействуете с Сервисом, для оценки перспективы проекта и
+        его улучшения.</li>
+      <li>Маркетинговые: Персонализация контента.</li>
+    </ul>
+
+    <h2>3. Ваше Согласие и Управление Cookies</h2>
+    <p>
+      Продолжая использовать наш сайт, вы соглашаетесь с размещением файлов cookie. Вы имеете право отозвать свое
+      согласие в любое время. Вы можете управлять или удалять файлы cookie через настройки вашего браузера.
+    </p>
+
+    <h2>4. Файлы Cookie Третьих Лиц</h2>
+    <p>
+      Мы можем использовать файлы cookie от сторонних сервисов (например, для аналитики), чтобы сформировать полное
+      понимание поведения пользователей.
+    </p>
+  </div>
+</main>
 
     <footer class="footer">
   <div class="footer__container container">
@@ -96,5 +140,15 @@
       <p class="footer__copy">&copy; 2025 Syntiq-Matic. Все права защищены. Платформа года.</p>
   </div>
 </footer>
+        <div class="cookie-popup is-hidden" id="cookiePopup">
+          <p class="cookie-popup__text">Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a
+              href="cookies.html" class="cookie-popup__link">Cookie политике</a>.</p>
+          <button class="cookie-popup__button button--primary" id="acceptCookies">Принять</button>
+        </div>
+        
+        <script>
+          // Инициализация Lucide Icons
+          lucide.createIcons();
+        </script>
   </body>
 </html>
